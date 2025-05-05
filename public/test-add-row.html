@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Add Row Functionality</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Test Add Row Functionality</h2>
+        
+        <div class="table-responsive">
+            <table id="test-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control" name="name[]" value="John Doe"></td>
+                        <td><input type="text" class="form-control" name="email[]" value="john@example.com"></td>
+                        <td><input type="text" class="form-control" name="phone[]" value="123-456-7890"></td>
+                    </tr>
+                    <tr id="add-row">
+                        <td colspan="3" class="p-0">
+                            <button type="button" id="add-row-btn" class="btn btn-success w-100 py-2">
+                                <i class="fa fa-plus"></i> Add Row
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        // Add row button click handler
+        $("#add-row-btn").click(function() {
+            // Get the first row
+            var firstRow = $("#test-table tbody tr:first");
+            
+            // Clone it
+            var newRow = firstRow.clone();
+            
+            // Clear the inputs
+            newRow.find("input").val("");
+            
+            // Insert the new row before the "Add Row" button row
+            $("#add-row").before(newRow);
+            
+            // Alert to confirm row was added
+            alert("New row added!");
+        });
+    });
+    </script>
+</body>
+</html>

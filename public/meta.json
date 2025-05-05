@@ -1,0 +1,8 @@
+{
+  "name": "Sales Invoice Laravel",
+  "short_name": "SalesInvoice",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}
